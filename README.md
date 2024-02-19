@@ -15,7 +15,17 @@
 
 </div>
 
-Welcome to the official Python library for RunPod API &amp; SDK.
+
+## Adjustments:
+
+* Workaround against KeyError: 'status' when checking if a job is completed using is_completed(job_state["status"]).
+* Timeout for fetching the job state from the server has been extended from 10 to 30 seconds. 
+
+* This adjustment was made in the: job_state = self.rp_client.get(endpoint=status_url, timeout=20)
+
+## Source:
+https://github.com/runpod/runpod-python/blob/main/runpod/endpoint/runner.py#L105C9-L105C60
+
 
 ## Table of Contents
 
