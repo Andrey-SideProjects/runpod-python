@@ -68,11 +68,11 @@ class RunPodClient:
         response.raise_for_status()
         return response.json()
 
-    def post(self, endpoint: str, data: dict, timeout: int = 10):
+    def post(self, endpoint: str, data: dict, timeout: int = 20):
         """ Post to the endpoint. """
         return self._request('POST', endpoint, data, timeout)
 
-    def get(self, endpoint: str, timeout: int = 10):
+    def get(self, endpoint: str, timeout: int = 20):
         """ Get from the endpoint. """
         return self._request('GET', endpoint, timeout=timeout)
 
