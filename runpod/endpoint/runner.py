@@ -102,7 +102,7 @@ class Job:
     def _fetch_job(self, source: str = "status") -> Dict[str, Any]:
         """ Returns the raw json of the status, raises an exception if invalid """
         status_url = f"{self.endpoint_id}/{source}/{self.job_id}"
-        job_state = self.rp_client.get(endpoint=status_url, timeout=30)
+        job_state = self.rp_client.get(endpoint=status_url, timeout=40)
 
         if is_completed(job_state["status"]):
             self.job_status = job_state["status"]
